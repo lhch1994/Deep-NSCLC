@@ -56,38 +56,46 @@ python3 generate_val_set.py  \
 
 ## Training the Baseline model
 ```
-python3 Training_ImageWise_PatchWise.py \
+python3 train.py \
 --dataset_dir /root/to/the/prepared/files  \
 --label_dir /root/to/the/label/csv \
---batch-size 4  --FCCMnet PatchWiseNetwork  \
---lr 1e-4    --epochs 100  --name PatchWiseNetwork
+--batch-size 4  --FCCMnet Baseline  \
+--lr 1e-4    --epochs 100  --name Baseline
 ```
 
 ## Training Image-Wise and Patch-Wise models
 ```
-python3 Training_ImageWise_PatchWise.py \
+python3 train.py \
 --dataset_dir /root/to/the/prepared/files  \
 --label_dir /root/to/the/label/csv \
---batch-size 4  --FCCMnet PatchWiseNetwork  \
+--batch-size 4  --FCCMnet PatchWise  \
 --lr 1e-4    --epochs 100  --name PatchWiseNetwork
 ```
 
 ```
-python3 Training_ImageWise_PatchWise.py \
+python3 train.py \
 --dataset_dir /root/to/the/prepared/files  \
 --label_dir /root/to/the/label/csv \
---batch-size 4  --FCCMnet ImageWiseNetwork  \
+--batch-size 4  --FCCMnet ImageWise  \
 --lr 1e-4    --epochs 100  --name ImageWiseNetwork
 ```
 
 ## Training ResNet model
 ```
-
+python3 train.py \
+--dataset_dir /root/to/the/prepared/files  \
+--label_dir /root/to/the/label/csv \
+--batch-size 4  --FCCMnet ResNet_FCCM  \
+--lr 1e-4    --epochs 100  --name ResNet18
 ```
 
 ## Training CatNet model
 ```
-
+python3 train.py \
+--dataset_dir /root/to/the/prepared/files  \
+--label_dir /root/to/the/label/csv \
+--batch-size 4  --FCCMnet CatNet_FCCM  \
+--lr 1e-4    --epochs 100  --name CatNet18
 ```
 
 ##  Visualization during training process
