@@ -16,7 +16,7 @@
   
 - preprocess the dataset: *prepare_training_data.py*
 
-**Notice that the entire dataset (2D CT images) can be download [here](https://wiki.cancerimagingarchive.net/display/Public/NSCLC-Radiomics#fa40518ae0634edca8cfa8e1df141bda).**
+**Notice that the entire dataset (2D CT images) can be downloaded [here](https://wiki.cancerimagingarchive.net/display/Public/NSCLC-Radiomics#fa40518ae0634edca8cfa8e1df141bda).**
 
 ## Prerequisites
 ```
