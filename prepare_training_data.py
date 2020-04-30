@@ -34,8 +34,8 @@ def main():
         Out_dir = Path(args.dump_root+'/'+one_patient)
         Out_dir.makedirs_p()
 
-        for find_study in os.listdir(Path(args.dataset_dir)/one_patient):
-            if "StudyID" in find_study or "CT" not in find_study:
+        for find_study in os.listdir(Path(args.dataset_dir)/one_patient):  
+            if "StudyID" in find_study or "CT" not in find_study:    #匹配条件，包含studyid或者没有ct
                 tmp_list = os.listdir(Path(args.dataset_dir)/one_patient/find_study)
                 CT_DCM_list = os.listdir(Path(args.dataset_dir)/one_patient/find_study/tmp_list[0])
                 CT_DCM_list = sorted(CT_DCM_list, key=embedded_numbers)
@@ -51,9 +51,9 @@ def main():
 
 
 def embedded_numbers(s):
-    re_digits = re.compile(r'(\d+)')
-    pieces = re_digits.split(s)           
-    pieces[1::2] = map(int, pieces[1::2])    
+    re_digits = re.compile(r'(\d+)')  #正则表达式，pattern：数字重复一次及以上
+    pieces = re_digits.split(s)           #切割字符串，返回切割后的部分，包括数字
+    pieces[1::2] = map(int, pieces[1::2])    #将数字部分整数化
     return pieces
 
 def resize_image(img_file):
